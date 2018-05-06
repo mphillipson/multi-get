@@ -1,4 +1,4 @@
-<?php namespace Mphillipson\Multiget\Tests;
+<?php namespace MPhillipson\Multiget\Tests;
 
 use Tests\TestCase as BaseTestCase;
 

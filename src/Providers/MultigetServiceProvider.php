@@ -1,8 +1,8 @@
 <?php
 
-namespace Mphillipson\Multiget\Providers;
+namespace MPhillipson\Multiget\Providers;
 
-use Mphillipson\Multiget\Console\Commands\Download;
+use MPhillipson\Multiget\Console\Commands\Download;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
