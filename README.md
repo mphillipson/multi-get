@@ -46,7 +46,7 @@ You can customize the property values in the published `config/multiget.php` fil
 Many of these configuration options can be overriden via Artisan command options, as described below.
 
 ## Usage
-### `multiget:download`
+#### `multiget:download`
 
 This Artisan command can be used to download part of a file from a URL to a default location (`/tmp`):
 ```
