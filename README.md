@@ -2,7 +2,7 @@
 This is a Laravel package containing a simplified version of a "download booster", which speeds up downloads by requesting
 files in multiple pieces simultaneously (saturating the network), then reassembling the pieces.
 
-This project was developed for [Carnegie Technologies](https://www.carnegietechnologies.com) as a [coding exercise](http://dist.pravala.com/coding/CarnegieCodingCheckMultiGet.pdf) for Software Engineering candidates.
+This project is my implementation of a [coding exercise](http://dist.pravala.com/coding/CarnegieCodingCheckMultiGet.pdf) issued by [Carnegie Technologies](https://www.carnegietechnologies.com) to candidates for Software Engineering positions.
 
 ### Features
 While I structured the core functionality of this package with an eye toward versatility, I was mindful of the fact that the exercise parameters explicitly prescribe a command-line interface.
