@@ -4,7 +4,7 @@ files in multiple pieces simultaneously (saturating the network), then reassembl
 
 This project was developed for [Carnegie Technologies](https://www.carnegietechnologies.com) as a [coding exercise](http://dist.pravala.com/coding/CarnegieCodingCheckMultiGet.pdf) for Software Engineering candidates.
 
-#### Features
+### Features
 While I structured the core functionality of this package with an eye toward versatility, I was mindful of the fact that the exercise parameters explicitly prescribe a command-line interface.
 
 My solution: a custom [Artisan Command](https://laravel.com/docs/5.4/artisan).
@@ -46,7 +46,7 @@ You can customize the property values in the published `config/multiget.php` fil
 Many of these configuration options can be overriden via Artisan command options, as described below.
 
 ## Usage
-#### `multiget:download`
+### `multiget:download`
 
 This Artisan command can be used to download part of a file from a URL to a default location (`/tmp`):
 ```
