@@ -19,12 +19,12 @@ This package is designed to be loaded into an existing **Laravel 5.4+** project 
 
 It is therefore necessary to run the following command from your Terminal to add my repository to your `composer.json` file before you install the package:
 ```
-$ composer config repositories.mphillipson vcs https://github.com/mphillipson/multi-get
+composer config repositories.mphillipson vcs https://github.com/mphillipson/multi-get
 ```
 
 Then run this command to add the package as a dependency:
 ```
-$ composer require mphillipson/multi-get:dev-master
+composer require mphillipson/multi-get:dev-master
 ```
 
 Don't forget to register the package service provider in your `config/app.php` file:
