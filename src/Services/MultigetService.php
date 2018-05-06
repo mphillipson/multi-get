@@ -194,32 +194,24 @@ class MultigetService
      * Sets the target path where the partially downloaded file will be written.
      *
      * @param  string $targetFile
-     * @throws \Exception if filename is not defined and unique filename cannot be created in target path
+     * @throws \Exception if target file is not defined and unique filename cannot be created in default target path
      * @return void
      */
     protected function setTargetFile($targetFile)
     {
-        $dirname = dirname($targetFile);
+        // Test whether target file path is specified
+        if ((string) $targetFile === '') {  // No, use config default
+            $targetFile = tempnam(
+                config('multiget.download.target_file.path'),
+                config('multiget.download.target_file.prefix')
+            );
 
-        // Test whether target directory path is being overriden
-        if ($dirname !== '') {  // Yes, use specified path
-            $targetFilePath = $dirname;
-        } else {  // No, use config default
-            $targetFilePath = config('multiget.download.target_file.path');
-        }
-
-        $basename = basename($targetFile);
-
-        // Test whether filename is specified
-        if ($basename !== '') {  // Yes, include filename in target file path
-            $this->targetFile = $targetFilePath . '/' . $basename;
-        } else {  // No, generate unique filename with default prefix from config
-            $this->targetFile = tempnam($targetFilePath, config('multiget.download.target_file.prefix'));
-
-            if ($this->targetFile === false) {
-                throw new \Exception('Could not create target output file.');
+            if ($targetFile === false) {
+                throw new \Exception('Could not create output file in default target file path.');
             }
         }
+
+        $this->targetFile = $targetFile;
     }
 
     /**
