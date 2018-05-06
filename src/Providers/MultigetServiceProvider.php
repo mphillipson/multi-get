@@ -1,7 +1,8 @@
 <?php
 
-namespace Mphillipson\Multiget\Providers;
+namespace MPhillipson\Multiget\Providers;
 
+use MPhillipson\Multiget\Console\Commands\Download;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,7 +22,15 @@ class MultigetServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__ . '/../../config/multiget.php' => config_path('multiget.php')
+        ], 'config');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Download::class
+            ]);
+        }
     }
 
     /**
@@ -31,6 +40,6 @@ class MultigetServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__ . '/../../config/multiget.php', 'multiget');
     }
 }

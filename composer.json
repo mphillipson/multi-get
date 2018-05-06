@@ -20,12 +20,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mphillipson\\Multiget\\": "src/"
+      "MPhillipson\\Multiget\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mphillipson\\Multiget\\Tests\\": "tests/"
+      "MPhillipson\\Multiget\\Tests\\": "tests/"
     }
   }
 }
