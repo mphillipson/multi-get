@@ -61,7 +61,7 @@ class Download extends Command
         $bytes = $this->multiget->download($this->argument('url'), $this->options());
 
         if ($bytes !== false) {
-            $this->info($bytes . ' bytes written successfully.');
+            $this->info($bytes . ' bytes written successfully to ' . realpath($this->multiget->targetFile) . '.');
         } else {
             $this->error($this->multiget->error ?: 'An unknown error was encountered.');
         }

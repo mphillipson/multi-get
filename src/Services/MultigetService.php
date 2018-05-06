@@ -4,12 +4,40 @@ namespace MPhillipson\Multiget\Services;
 
 class MultigetService
 {
+    /**
+     * The error message from last thrown exception.
+     *
+     * @var string
+     */
     public $error;
 
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    public $targetFile;
+
+    /**
+     * The number of chunks to divide the download process into.
+     *
+     * @var int
+     */
     protected $chunks;
+
+    /**
+     * The size (in bytes) of each chunk to be downloaded.
+     *
+     * @var int
+     */
     protected $chunkSize;
+
+    /**
+     * The total size (in bytes) to be downloaded.
+     *
+     * @var int
+     */
     protected $maxSize;
-    protected $targetFile;
 
     /**
      * Downloads part of a file from a web server, in chunks, and writes the contents to a file.
