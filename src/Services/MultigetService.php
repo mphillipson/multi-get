@@ -44,6 +44,7 @@ class MultigetService
      *
      * @param  string $url
      * @param  array  $options
+     *
      * @return mixed
      */
     public function download($url, array $options = [])
@@ -71,7 +72,9 @@ class MultigetService
      * Downloads partial file contents from a URL, using multiple chunked requests executed in parallel.
      *
      * @param  string $url
+     *
      * @throws \Exception if error is encountered in cURL connections
+     *
      * @return string
      */
     protected function getPartialFile($url)
@@ -153,7 +156,9 @@ class MultigetService
      * Sets the number of chunks to divide the download process into.
      *
      * @param  int $chunks
-     * @throws \Exception if
+     *
+     * @throws \Exception if number of chunks is not defined or invalid.
+     *
      * @return void
      */
     protected function setChunks($chunks)
@@ -176,7 +181,9 @@ class MultigetService
      * Sets the size (in bytes) of each chunk to be downloaded.
      *
      * @param  int $chunkSize
-     * @throws \Exception if
+     *
+     * @throws \Exception if chunk size is not defined or invalid.
+     *
      * @return void
      */
     protected function setChunkSize($chunkSize)
@@ -199,7 +206,9 @@ class MultigetService
      * Sets the total size (in bytes) to be downloaded.
      *
      * @param  int $maxSize
-     * @throws \Exception if
+     *
+     * @throws \Exception if maximum size is not defined or invalid.
+     *
      * @return void
      */
     protected function setMaxSize($maxSize)
@@ -222,7 +231,9 @@ class MultigetService
      * Sets the target path where the partially downloaded file will be written.
      *
      * @param  string $targetFile
+     *
      * @throws \Exception if target file is not defined and unique filename cannot be created in default target path
+     *
      * @return void
      */
     protected function setTargetFile($targetFile)
@@ -246,7 +257,9 @@ class MultigetService
      * Writes the partially downloaded file to the target location.
      *
      * @param  string $filePart
+     *
      * @throws \Exception if partial file contents cannot be written to target location
+     *
      * @return int
      */
     protected function writeTargetFile($filePart)
