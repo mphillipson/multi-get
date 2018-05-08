@@ -42,6 +42,7 @@ class Download extends Command
      * Create a new command instance.
      *
      * @param  Multiget $multiget
+     *
      * @return void
      */
     public function __construct(Multiget $multiget)
